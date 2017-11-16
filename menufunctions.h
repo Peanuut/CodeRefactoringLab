@@ -1,4 +1,5 @@
 int showMenu();
+void errorMessage();
 double ohmsLaw();
 double rTot();
 double powerLaw();

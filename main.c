@@ -1,23 +1,19 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
-#include <limits.h>
-#include <stdbool.h>
-#include "calculations.h"
+#include <stdio.h>
 #include "menufunctions.h"
 
 int main()
 {
     system("chcp 1252");
     system("cls");
-    bool Exit = false;
-    while (Exit == false)
+    int Exit = 0;
+    while (Exit == 0)
     {
         int val = showMenu();
-        
+
         switch(val) {
           case 0:
-            Exit = true;
+            Exit = 1;
             break;
           case 1:
             printf("%lf", ohmsLaw());
@@ -41,9 +37,9 @@ int main()
             printf("%lf",activeEffectPhase());
             break;
           default:
-            Exit = true;
-            printf("Fel alternativ Försök igen!: \n");
-            break;
+            Exit = 1;
+            errorMessage();
+            return main();
         }
     }
 
