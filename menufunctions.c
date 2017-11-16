@@ -4,7 +4,7 @@
 
 void showMenu(void) {
   printf("\n");
-  printf("Välj vilka storheter du vill ber�kna:\n");
+  printf("Välj vilka storheter du vill beräkna:\n");
   printf("Välj 1 för: OHMS LAG\n");
   printf("Välj 2 för: Rtot\n");
   printf("Välj 3 för: EFFEKTLAGEN ENKEL\n");
@@ -15,6 +15,10 @@ void showMenu(void) {
   printf("Välj 0 för: för ATT AVSLUTA\n");
 }
 
+void errorMessage() {
+  printf("För högt värde, Försök igen: \n");
+}
+
 double ohmsLaw() {
   printf("Ohms lag spänningen(volt/V) betäckning U lika med Resistansen(Ohm) betäckning R \n");
   printf("gånger Strömmen(Ampere) med betäckningen I. Kort U=R*I. \n\n");
@@ -23,15 +27,15 @@ double ohmsLaw() {
   scanf("%lf", &r);
   if(r > 20000)
   {
-      printf("För högt värde, Försök igen: \n");
+      errorMessage()
       return 0;
   }
   printf("Skriv ström I < 440 Ampere: \n");
   scanf("%lf", &i);
   if(i > 440)
   {
-      printf("För högt värde, Försök igen: \n");
-      return 0;
+    errorMessage()
+    return 0;
   }
 
   return multiplication(r ,i);
@@ -45,21 +49,21 @@ double rTot() {
   scanf("%lf", &r1);
   if(r1 > 20000)
   {
-      printf("För högt värde, Försök igen: \n");
+      errorMessage();
       return 0;
   }
   printf("Skriv resistans R2 < 20 000ohm: \n ");
   scanf("%lf", &r2);
   if(r2 > 20000)
   {
-      printf("För högt värde, Försök igen: \n");
+      errorMessage()
       return 0;
   }
   printf("Skriv resistans R3 < 20 000ohm: \n ");
   scanf("%lf", &r3);
   if(r3 > 20000)
   {
-      printf("För högt värde, Försök igen: \n");
+      errorMessage()
       return 0;
   }
   return res_tot(r1, r2, r3);
@@ -75,7 +79,7 @@ double powerLaw() {
   scanf("%lf", &i);
   if(i > 440)
   {
-      printf("För högt värde, Försök igen: \n");
+      errorMessage()
       return 0;
   }
   return multiplication(u, i);
@@ -91,7 +95,7 @@ double apparentEffect() {
   scanf("%lf", &i);
   if(i > 440)
   {
-    printf("För högt värde, Försök igen: \n");
+    errorMessage()
     return 0;
   }
   return multiplication(u, i);
@@ -106,14 +110,14 @@ double activeEffect() {
   printf("Skriv ström I: \n");
   scanf("%lf", &i);
   if(i > 440){
-      printf("För högt värde, Försök igen:\n");
+      errorMessage()
       return 0;
   }
   printf("Skriv in effektfaktorn cos > 0 && cos < 1:\n");
   scanf("%lf", &cos);
   if (cos < 0 && cos > 1)
   {
-      printf("Fel värde, Försök igen\n");
+      errorMessage()
       return 0;
   }
   return aktiv_eff(u, i, cos);
@@ -127,7 +131,7 @@ double apparentEffectPhase() {
   scanf("%lf", &u);
   if(u > 400)
   {
-      printf("För högt värde, Försök igen: \n");
+      errorMessage()
       return 0;
   }
 
@@ -135,7 +139,7 @@ double apparentEffectPhase() {
   scanf("%lf", &i);
   if(i > 440)
   {
-      printf("För högt värde, Försök igen: \n");
+      errorMessage()
       return 0;
   }
   return sken_3fas(u, i);
@@ -150,14 +154,14 @@ double activeEffectPhase() {
   scanf("%lf", &u);
   if(u > 400)
   {
-    printf("För högt värde, Försök igen.\n");
+    errorMessage()
     return 0;
   }
   printf("Skriv ström I i ampere(A): \n");
   scanf("%lf", &i);
   if(i > 440)
   {
-    printf("För högt värde, Försök igen.\n");
+    errorMessage()
     return 0;
   }
 
@@ -165,7 +169,7 @@ double activeEffectPhase() {
   scanf("%lf", &cos);
   if (cos < 0 && cos > 1)
   {
-    printf("För högt värde, Försök igen: \n");
+    errorMessage()
     return 0;
   }
 
