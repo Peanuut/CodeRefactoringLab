@@ -6,17 +6,15 @@
 #include "calculations.h"
 #include "menufunctions.h"
 
-bool Exit = false;
-
 int main()
 {
     system("chcp 1252");
     system("cls");
+    bool Exit = false;
     while (Exit == false)
     {
-        int val;
-        showMenu();
-        scanf("%d", &val);
+        int val = showMenu();
+        
         switch(val) {
           case 0:
             Exit = true;
