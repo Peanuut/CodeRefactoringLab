@@ -26,55 +26,46 @@ AKTIV EFFEKT 3-FAS ~: P=U*I*sqrt(3)*cos()
 #include "calculations.h"
 #include "menufunctions.h"
 
+bool Exit = false;
+
 int main()
 {
     system("chcp 1252");
     system("cls");
-    bool exit = false;
-    while (exit == false)
+    while (Exit == false)
     {
         int val;
         showMenu();
         scanf("%d", &val);
-
-        if(val == 1)
-        {
-           printf("%lf", ohmsLaw());
-        }
-        else if(val == 2)
-        {
-          printf("%lf", rTot());
-        }
-
-        else if(val == 3)
-        {
-          printf("%lf\n", powerLaw());
-        }
-        else if(val == 4)
-        {
-          printf("%lf\n", apparentEffect());
-        }
-
-        else if(val == 5)
-        {
-          printf("%lf", activeEffect());
-        }
-        else if(val == 6)
-        {
-          printf("%lf",apparentEffectPhase());
-        }
-        else if(val == 7)
-        {
-          printf("%lf",activeEffectPhase());
-        }
-        else if (val == 0)
-        {
-            exit = true;
-        }
-        else
-        {
+        switch(val) {
+          case 0:
+            Exit = true;
+            break;
+          case 1:
+            printf("%lf", ohmsLaw());
+            break;
+          case 2:
+            printf("%lf", rTot());
+            break;
+          case 3:
+            printf("%lf", powerLaw());
+            break;
+          case 4:
+            printf("%lf", apparentEffect());
+            break;
+          case 5:
+            printf("%lf", activeEffect());
+            break;
+          case 6:
+            printf("%lf",apparentEffectPhase());
+            break;
+          case 7:
+            printf("%lf",activeEffectPhase());
+            break;
+          default:
+            Exit = true;
             printf("Fel alternativ Försök igen!: \n");
-            return 0;
+            break;
         }
     }
 
