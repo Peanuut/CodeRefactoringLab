@@ -5,4 +5,3 @@ double sken_eff(double, double);
 double aktiv_eff(double, double, double);
 double sken_3fas(double, double);
 double aktiv_3fas(double, double, double);
-void showMenu(void);
