@@ -1,2 +1,2 @@
 hellomake: main.c calculations.c menufunctions.c
-	gcc -o a main.c calculatins.c menufunctions.c -I.
+	gcc -o a main.c calculations.c menufunctions.c -I.

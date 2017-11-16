@@ -24,7 +24,7 @@ AKTIV EFFEKT 3-FAS ~: P=U*I*sqrt(3)*cos()
 #include <limits.h>
 #include <stdbool.h>
 #include "calculations.h"
-#include "funktioner.h"
+#include "menufunctions.h"
 
 
 int main()
