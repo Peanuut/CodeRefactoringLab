@@ -4,7 +4,7 @@ test: calculations.c calcTests.c Unity/src/unity.c
 
 #Makes the main program as "PROGRAM.exe"
 program: main.c calculations.c menufunctions.c
-	gcc main.c calculations.c menufunctions.c -o PROGRAM
+	gcc main.c calculations.c menufunctions.c -o MAINPROGRAM
 
 clean:
 	-rm -f *.o
