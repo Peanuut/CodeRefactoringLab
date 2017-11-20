@@ -2,7 +2,7 @@
 test: calculations.c calcTests.c Unity/src/unity.c
 	gcc calculations.c calcTests.c Unity/src/unity.c -o TEST
 
-#Makes the main program as "PROGRAM.exe"
+#Makes the main program as "MAINPROGRAM.exe"
 program: main.c calculations.c menufunctions.c
 	gcc main.c calculations.c menufunctions.c -o MAINPROGRAM
 
