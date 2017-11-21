@@ -1,3 +1,5 @@
+﻿#Code refactoring
+
 Detta program är en räknare som kan användas För ellära med enbart växelspänningar och växelströmmar. Räknaren
 tar upp räkning med spänningar i volt(U), resistanser upp till 20 000/ohm(R).
 ström upp till 440 Ampere(I), effekter P i watt(W). 3 faser upp till 400V mellan faserna.
