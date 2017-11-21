@@ -1,4 +1,4 @@
-﻿#Code refactoring
+﻿#Code refactoring#
 
 Detta program är en räknare som kan användas För ellära med enbart växelspänningar och växelströmmar. Räknaren
 tar upp räkning med spänningar i volt(U), resistanser upp till 20 000/ohm(R).
